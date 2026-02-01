@@ -1,0 +1,11 @@
+..\donut.c(21): Error! E1077: Missing '}'
+..\donut.c(21): Error! E1077: Missing '}'
+..\donut.c(17): Warning! W202: Symbol 'sB' has been defined, but not referenced
+..\donut.c(17): Warning! W202: Symbol 'sA' has been defined, but not referenced
+..\donut.c(17): Warning! W202: Symbol 'cB' has been defined, but not referenced
+..\donut.c(17): Warning! W202: Symbol 'cA' has been defined, but not referenced
+..\donut.c(17): Warning! W202: Symbol '_' has been defined, but not referenced
+..\donut.c(22): Error! E1099: Statement must be inside function. Probable cause: missing {
+..\donut.c(56): Error! E1061: Expecting data or function declaration, but found '}'
+..\donut.c(57): Error! E1026: Invalid declarator
+..\donut.c(57): Error! E1009: Expecting ';' but found 'end of file'

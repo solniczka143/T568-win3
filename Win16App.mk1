@@ -1,0 +1,54 @@
+!define BLANK ""
+"C:\Users\solni\Documents\programowanie\Win 3.0 T568\AboutDlg.obj" : "C:\Use&
+rs\solni\Documents\programowanie\Win 3.0 T568\AboutDlg.c" .AUTODEPEND
+ @C:
+ cd "C:\Users\solni\Documents\programowanie\Win 3.0 T568"
+ *wcc AboutDlg.c -i="C:\WATCOM/h;C:\WATCOM/h/win" -w4 -e25 -zq -zWs -od -d1 &
+-fpi -bt=windows -fo=.obj -ms
+
+"C:\Users\solni\Documents\programowanie\Win 3.0 T568\MainWnd.obj" : "C:\User&
+s\solni\Documents\programowanie\Win 3.0 T568\MainWnd.c" .AUTODEPEND
+ @C:
+ cd "C:\Users\solni\Documents\programowanie\Win 3.0 T568"
+ *wcc MainWnd.c -i="C:\WATCOM/h;C:\WATCOM/h/win" -w4 -e25 -zq -zWs -od -d1 -&
+fpi -bt=windows -fo=.obj -ms
+
+"C:\Users\solni\Documents\programowanie\Win 3.0 T568\WinMain.obj" : "C:\User&
+s\solni\Documents\programowanie\Win 3.0 T568\WinMain.c" .AUTODEPEND
+ @C:
+ cd "C:\Users\solni\Documents\programowanie\Win 3.0 T568"
+ *wcc WinMain.c -i="C:\WATCOM/h;C:\WATCOM/h/win" -w4 -e25 -zq -zWs -od -d1 -&
+fpi -bt=windows -fo=.obj -ms
+
+"C:\Users\solni\Documents\programowanie\Win 3.0 T568\Resource.res" : "C:\Use&
+rs\solni\Documents\programowanie\Win 3.0 T568\Resource.rc" .AUTODEPEND
+ @C:
+ cd "C:\Users\solni\Documents\programowanie\Win 3.0 T568"
+ *wrc Resource.rc -bt=windows -i="$[:;C:\WATCOM/h;C:\WATCOM/h/win" -q -ad -r&
+ -fo=Resource.res
+
+"C:\Users\solni\Documents\programowanie\Win 3.0 T568\Win16App.exe" : "C:\Use&
+rs\solni\Documents\programowanie\Win 3.0 T568\AboutDlg.obj" "C:\Users\solni\&
+Documents\programowanie\Win 3.0 T568\MainWnd.obj" "C:\Users\solni\Documents\&
+programowanie\Win 3.0 T568\WinMain.obj" "C:\Users\solni\Documents\programowa&
+nie\Win 3.0 T568\AboutDlg.h" "C:\Users\solni\Documents\programowanie\Win 3.0&
+ T568\Globals.h" "C:\Users\solni\Documents\programowanie\Win 3.0 T568\MainWn&
+d.h" "C:\Users\solni\Documents\programowanie\Win 3.0 T568\Resource.h" "C:\Us&
+ers\solni\Documents\programowanie\Win 3.0 T568\App.ico" "C:\Users\solni\Docu&
+ments\programowanie\Win 3.0 T568\Resource.res" .AUTODEPEND
+ @C:
+ cd "C:\Users\solni\Documents\programowanie\Win 3.0 T568"
+ @%write Win16App.lk1 FIL AboutDlg.obj,MainWnd.obj,WinMain.obj
+ @%append Win16App.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b Win16App.imp 
+ @%append Win16App.lk1 LIBR Win16App.imp
+!endif
+!ifneq BLANK "Resource.res"
+ @%append Win16App.lk1 op resource=Resource.res
+!endif
+ *wlink name Win16App sys windows op st=4096 op m op maxe=25 op q op symf @W&
+in16App.lk1
+!ifneq BLANK "Resource.res"
+!endif
+
