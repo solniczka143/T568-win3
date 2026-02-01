@@ -1,4 +1,4 @@
-# Win16 T568 learning Windwos 3 aplication
+# Win16 T568 learning Windows 3 application
 
 ## Introduction
 
